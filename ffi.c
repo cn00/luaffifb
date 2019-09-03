@@ -2318,7 +2318,7 @@ static int cdata_sub(lua_State* L)
 #define MULC(l,r,s) s = l * r
 #define DIVC(l,r,s) s = l / r
 #define MODC(l,r,s) (void) l, (void) r, memset(&s, 0, sizeof(s)), luaL_error(L, "NYI: complex mod")
-#define POWC(l,r,s) s = cpow(l, r)
+#define POWC(l,r,s) s = pow(l, r)
 #else
 #define MULC(l,r,s) s.real = l.real * r.real - l.imag * r.imag, s.imag = l.real * r.imag + l.imag * r.real
 #define DIVC(l,r,s) s.real = (l.real * r.real + l.imag * r.imag) / (r.real * r.real + r.imag * r.imag), \
