@@ -360,13 +360,13 @@ struct cdata {
 typedef void (*cfunction)(void);
 
 #ifdef HAVE_COMPLEX
-typedef double complex complex_double;
-typedef float complex complex_float;
+typedef double complex_double;
+typedef float  complex_float;
 static complex_double mk_complex_double(double real, double imag) {
-    return real + imag * 1i;
+    return (complex_double)(real + imag * 1i);
 }
 static complex_double mk_complex_float(double real, double imag) {
-    return real + imag * 1i;
+    return (complex_double)(real + imag * 1i);
 }
 #else
 typedef struct {
